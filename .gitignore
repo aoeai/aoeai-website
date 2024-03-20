@@ -1,0 +1,61 @@
+Thumbs.db
+.DS_Store
+.dist
+.tmp
+.lock
+.sass-cache
+npm-debug.log
+node_modules
+builds
+package-lock.json
+public
+resources
+jsconfig.json
+hugo_stats.json
+go.sum
+yarn.lock
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+### 临时目录 ###
+www.aoeai.com
+temp-check
+
+### drawio ###
+*.drawio.bkp
+*.drawio.dtmp
+
+### hugo ###
+.hugo_build.lock
+
+### hugo themes ###
+hugo-clarity/

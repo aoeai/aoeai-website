@@ -1,0 +1,13 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+# footer menu
+[[footer]]
+name = "浙ICP备16025224号-1"
+url = "https://beian.miit.gov.cn/"
+weight = 4
