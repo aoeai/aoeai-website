@@ -7,15 +7,16 @@
 # 6. 删除临时目录
 # 7. 提交新代码到码云
 
-_WWW_WYYL1_DIR="/Users/aoe/wyyl1/wyyl1.github.io/www.wyyl1.com"
-rm -rf $_WWW_WYYL1_DIR
-cd /Users/aoe/wyyl1/wyyl1.github.io/
-hugo --config config.toml,config-wyyl1.com.toml --minify
+# hugo publishDir
+_HUGO_PUBLISH_DIR="/Users/aoe/aoeai/aoeai-website/public"
+rm -rf $_HUGO_PUBLISH_DIR
+cd /Users/aoe/aoeai/aoeai-website/
+hugo --minify
 
-_WYYL1_DIR="/Users/aoe/gitee/wyyl1"
-cd $_WYYL1_DIR
+_AOEAI_DIR="/Users/aoe/gitee/aoeai"
+cd $_AOEAI_DIR
 # 临时存储目录
-_TEMP_DIR="$_WYYL1_DIR/temp-save"
+_TEMP_DIR="$_AOEAI_DIR/temp-save"
 
 if  [ -d  "$_TEMP_DIR"  ]; then
     rm -rf $_TEMP_DIR
@@ -23,20 +24,20 @@ fi
 
 mkdir $_TEMP_DIR
 
-_WEB_WYYL1_DIR="$_WYYL1_DIR/web-aoeai"
-cd $_WEB_WYYL1_DIR
+_WEB_AOEAI_DIR="$_AOEAI_DIR/web-aoeai"
+cd $_WEB_AOEAI_DIR
 cp -r .git $_TEMP_DIR
 cp .gitignore $_TEMP_DIR
 
-cd $_WYYL1_DIR
-rm -rf $_WEB_WYYL1_DIR
-cp -r $_WWW_WYYL1_DIR $_WEB_WYYL1_DIR
-cp $_TEMP_DIR/.gitignore $_WEB_WYYL1_DIR
-cp -r $_TEMP_DIR/.git $_WEB_WYYL1_DIR
+cd $_AOEAI_DIR
+rm -rf $_WEB_AOEAI_DIR
+cp -r $_HUGO_PUBLISH_DIR $_WEB_AOEAI_DIR
+cp $_TEMP_DIR/.gitignore $_WEB_AOEAI_DIR
+cp -r $_TEMP_DIR/.git $_WEB_AOEAI_DIR
 
 rm -rf $_TEMP_DIR
 
-cd $_WEB_WYYL1_DIR
+cd $_WEB_AOEAI_DIR
 sudo git add .
 _time=$(date "+%Y%m%d-%H:%M:%S")
 sudo git commit -m "auto commit $_time"
